@@ -184,7 +184,7 @@ const handleLogout = async (req,res) => {
                 sameSite: 'None',
                 secure: true,
                 maxAge : 24 * 60 * 60 * 1000
-            }).sendStatus(204).json({
+            }).status(204).json({
                 message: "Success"
             })
         }

@@ -18,14 +18,14 @@ router.route('/register').post(
     userController.newUserRegistration
 )
 
+
 // route for user authentication 
 router.route('/auth').post(userController.authUser)
 router.route('/refresh').get(userController.handleRefreshToken)
-router.route('/logout').get(userController.handleLogout)
-
 
 
 router.use(verifyJWT)
+router.route('/logout').get(userController.handleLogout)
 // router for authorized user 
 // router to show only public profiles
 router.route('/profiles').get(userController.getPublicProfiles)

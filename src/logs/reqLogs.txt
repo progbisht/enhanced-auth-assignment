@@ -210,3 +210,17 @@
 20240511	21:58:51	715fd3f0-805e-449d-9f96-055dadc65780	GET	undefined	/api/v1/user/profiles/admins
 20240511	21:59:24	dcc70f46-b744-44fc-85d2-3c80d58a81bc	GET	undefined	/api/v1/user/profiles/users
 20240511	22:00:02	4dceb301-9918-456d-b51e-56cab2588cca	GET	undefined	/api/v1/user/profiles/users
+20240511	22:16:29	84615982-f10f-44df-bbee-2adfdd839be9	POST	undefined	/api/v1/user/auth
+20240511	22:17:05	0dd5b6de-e2dd-4d35-95f1-8af6d2554c99	GET	undefined	/api/v1/user/refresh
+20240511	22:17:23	730599aa-607d-420d-885b-2bd595416b94	GET	undefined	/api/v1/user/refresh
+20240511	22:17:33	557f7630-28df-497c-b307-ffe046b16a10	GET	undefined	/api/v1/user/profiles
+20240512	02:04:29	fc193d9f-a72d-4f76-937a-1db667da9e20	GET	undefined	/api/v1/users/logout
+20240512	02:04:47	87c5ecef-30ed-4ef8-a69d-aff0d824d8c6	GET	undefined	/api/v1/users/logout
+20240512	02:05:25	f48224e2-1cd7-4d7d-9d12-4f9983139f2f	GET	undefined	/api/v1/users/refresh
+20240512	02:06:19	c13e9f7f-0d00-4dd6-adef-205a3507f330	POST	undefined	/api/v1/users/auth
+20240512	02:07:28	d2a3cc60-fedf-40ee-9018-697613f81b2b	POST	undefined	/api/v1/users/auth
+20240512	02:08:23	24938172-fb15-4362-8cec-81d24db3bed4	POST	undefined	/api/v1/users/auth
+20240512	02:09:01	ac9e566e-6dbe-4844-b2f8-073d77cd4f2a	POST	undefined	/api/v1/users/auth
+20240512	02:09:31	7e540cbb-6db4-417c-912d-f67816804507	POST	undefined	/api/v1/users/auth
+20240512	02:09:46	ac6887f4-d248-4914-8dd5-1d7fe4e86d78	POST	undefined	/api/v1/users/auth
+20240512	02:09:58	0176c9bd-ddad-4c01-aa33-3b5293254d87	POST	undefined	/api/v1/users/register
