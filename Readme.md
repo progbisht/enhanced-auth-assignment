@@ -33,10 +33,11 @@ npm run dev
   http://localhost:4000/api/v1/user/register
   http://localhost:4000/api/v1/user/auth
   http://localhost:4000/api/v1/user/refresh
-  http://localhost:4000/api/v1/user/logout
+  
   ```
 - Private routes:
   ```
+  http://localhost:4000/api/v1/user/logout
   http://localhost:4000/api/v1/user/profiles
   http://localhost:4000/api/v1/user/profiles/:id
   http://localhost:4000/api/v1/user/profiles/:id
