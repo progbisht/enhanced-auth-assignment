@@ -51,7 +51,7 @@ npm run dev
 - An admin can be set through the endpoint PATCH /superuser/:id this is on a temporary basis for testing only if the functionality is proper or not.
 
 
-###Routes
+### Routes
 - POST /register - This API endpoint is for new user registration. The data can be posted in raw JSON or form data if uploading a photo from the device.
 - POST /auth - This API endpoint is for logging in as a registered user.
 - GET /refresh - This API endpoint is for a request for an access token every time the access token expires. 
