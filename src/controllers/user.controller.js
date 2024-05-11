@@ -510,11 +510,11 @@ const toggleProfile = async(req,res) => {
 // @desc -      get admin profiles
 // @route -     GET /profiles/admins
 // @access -    privaate (authorized user)
-const getAdminProfiles = async(req,res) => {
+const getAdminProfiles = async(req, res) => {
     try{
         // fetch the user profile excluding private information
-        const users = await User.find().select("-password -phone -refreshToken -roles -isPublic").exec()
-        
+        const users = await User.find().select("-password -phone -refreshToken -isPublic").exec()
+        console.log(users);
         if(!users){
             return res.status(200).json({
                 message: "No user profile to show",
@@ -523,8 +523,8 @@ const getAdminProfiles = async(req,res) => {
         }
 
         // filter the users whose role is admin
-        const admins = users.filter( (user) => user.roles?.Admin === 3000)
-
+        const admins = users.filter( (user) => user.roles.Admin === 3000)
+        console.log(admins);
         res.status(200).json({
             message: "Success",
             admins
@@ -532,6 +532,7 @@ const getAdminProfiles = async(req,res) => {
 
     }
     catch(err){
+        console.log(err);
         return res.status(500).json({
             "message" : err.message
         })
@@ -544,7 +545,7 @@ const getAdminProfiles = async(req,res) => {
 const getUserProfiles = async(req,res) => {
     try{
         // fetch the user profile excluding private information
-        const users = await User.find().select("-password -phone -refreshToken -roles -isPublic").exec()
+        const users = await User.find().select("-password -phone -refreshToken -isPublic").exec()
         
 
         if(!users){
@@ -555,7 +556,7 @@ const getUserProfiles = async(req,res) => {
         }
 
         // filter the user who are not admins but normal users
-        const allUsers = users.filter( (user) => user.roles?.User === 1000)
+        const allUsers = users.filter( (user) => user.roles?.Admin !== 3000)
         
         res.status(200).json({
             message: "Success",
@@ -571,6 +572,37 @@ const getUserProfiles = async(req,res) => {
 
 
 
+// extras
+// this method is just to set an admin for testing purpose
+const setAdmin = async (req, res) => {
+    try{
+        const {id} = req.params
+
+        // check for user exists in our records 
+        const user = await User.findOne( {_id : id} ).exec();
+
+        if(!user)
+        {
+            return res.status(400).json({
+                message :  `User with id ${id} dooes not exist.`
+            });
+        }
+
+        user.roles.Admin = 3000
+        await user.save()
+
+        res.status(200).json({
+            message: "Success"
+        })
+        
+    }
+    catch(err){
+        return res.status(500).json({
+            "message" : err.message
+        })
+    }
+}
+
 module.exports = {
     newUserRegistration,
     authUser,
@@ -583,6 +615,6 @@ module.exports = {
     toggleProfile,
     getAdminProfiles,
     getUserProfiles,
-
+    setAdmin,
 }
 
